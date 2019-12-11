@@ -162,7 +162,7 @@ public class SetCommandsTest extends JedisCommandTestBase {
     assertEquals(1, members.size());
     assertEquals(superSet, members);
 
-    assertNull(jedis.spop("foo", 2));
+    assertEquals(new HashSet<String>(), jedis.spop("foo", 2));
 
     // Binary
     jedis.sadd(bfoo, ba);
@@ -184,7 +184,7 @@ public class SetCommandsTest extends JedisCommandTestBase {
     assertEquals(1, bmembers.size());
     assertByteArraySetEquals(bsuperSet, bmembers);
 
-    assertNull(jedis.spop(bfoo, 2));
+    assertByteArraySetEquals(new HashSet<byte[]>(), jedis.spop(bfoo, 2));
   }
 
   @Test
