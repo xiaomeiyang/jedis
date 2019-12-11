@@ -185,7 +185,6 @@ public class SetCommandsTest extends JedisCommandTestBase {
     assertByteArraySetEquals(bsuperSet, bmembers);
 
     assertByteArraySetEquals(new HashSet<byte[]>(), jedis.spop(bfoo, 2));
-
   }
 
   @Test
